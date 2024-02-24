@@ -1,76 +1,42 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image'
+import { FaHome, FaInfoCircle, FaWrench, FaProjectDiagram, FaUserCircle, FaEnvelope, FaSignInAlt, FaStar } from "react-icons/fa";
 
-import Home from "@/app/Home/page";
-import { FaHome, FaInfoCircle, FaWrench, FaProjectDiagram, FaUserCircle, FaEnvelope } from "react-icons/fa";
-
-const Sidebar = () => {
+const Navbar = () => {
   return (
-    <div className="flex flex-col h-screen bg-white w-64 fixed left-0 top-0 overflow-auto">
-      <div className="flex justify-center items-center text-3xl font-bold h-18 ml-4 mr-4 mt-10 relative">
-        <span className="font-cursive">T</span>
-        <span>hakur</span>
-        {/* Top */}
-        <div
-          className="absolute top-0 left-5 w-8 h-2 bg-red-500"
-          style={{ top: "-10px" }}
-        ></div>
-        <div
-          className="absolute top-0 left-5 h-8 w-2 bg-red-500"
-          style={{ top: "-10px" }}
-        ></div>
-        {/* Bottom */}
-        <div
-          className="absolute bottom-0 right-5 w-8 h-2 bg-red-500"
-          style={{ bottom: "-10px" }}
-        ></div>
-        <div
-          className="absolute bottom-0 right-5 h-8 w-2 bg-red-500"
-          style={{ bottom: "-10px" }}
-        ></div>
-      </div>
-
-      <div className="flex flex-col text-lg font-bold items-center justify-center h-full space-y-4">
-        <Link
-          href="/Home"
-          className="flex items-center space-x-2 border-b border-gray-400"
-        >
-          <FaHome /> <span>Home</span>
+    <div className="flex flex-col md:flex-row justify-around items-center text-white bg-red-600 w-full fixed top-0 left-0 h-auto md:h-16">
+      <Image src="/logo.png" width={500} height={500} alt="logo" className="h-10 w-auto mx-auto md:mx-0" />
+      <div className="flex flex-col md:flex-row md:space-x-4 overflow-x-auto no-scrollbar space-y-2 md:space-y-0 p-4 md:p-0">
+        <Link href="/Home" className="flex items-center space-x-2">
+            <FaHome /> <span>Home</span>
         </Link>
-        <Link
-          href="/About"
-          className="flex items-center space-x-2 border-b border-gray-400"
-        >
-          <FaInfoCircle /> <span>About</span>
+        <Link href="/About"className="flex items-center space-x-2">
+            <FaInfoCircle /> <span>About</span>
         </Link>
-        <Link
-          href="/Skill"
-          className="flex items-center space-x-2 border-b border-gray-400"
-        >
-          <FaWrench /> <span>Skill</span>
+        <Link href="/Skill" className="flex items-center space-x-2">
+            <FaWrench /> <span>Skill</span>
         </Link>
-        <Link
-          href="/Project"
-          className="flex items-center space-x-2 border-b border-gray-400"
-        >
-          <FaProjectDiagram /> <span>Project</span>
+        <Link href="/Project" className="flex items-center space-x-2">
+            <FaProjectDiagram /> <span>Project</span>
         </Link>
-        <Link
-          href="/Profile"
-          className="flex items-center space-x-2 border-b border-gray-400"
-        >
-          <FaUserCircle /> <span>Profile</span>
+        <Link href="/Profile" className="flex items-center space-x-2">
+            <FaUserCircle /> <span>Profile</span>
         </Link>
-        <Link
-          href="/Contact"
-          className="flex items-center space-x-2 border-b border-gray-400"
-        >
-          <FaEnvelope /> <span>Contact</span>
+        <Link href="/Contact" className="flex items-center space-x-2">
+            <FaEnvelope /> <span>Contact</span>
+        </Link>
+        <Link href="/Review" className="flex items-center space-x-2">
+            <FaStar /> <span>Review</span>
+        </Link>
+        <Link href="/Login" className="flex items-center space-x-2">
+            <FaSignInAlt /> <span>Login</span>
         </Link>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default Navbar;
+
